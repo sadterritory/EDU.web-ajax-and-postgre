@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous">
+    </script>
+
+    <title>Lab 3</title>
+</head>
+<style>
+    .inner-wrapper {
+        max-width: 1380px;
+    }
+</style>
+<body>
+<header class="inner-wrapper">
+    <div class="inner-wrapper">
+        <nav>
+            <div class="flex_container">
+                <img src="assets/images/nstu.png" width="90" height="90" alt="nstu" class="nstuImg">
+                <h1 class="labHeader">Лабораторная работа №4</h1>
+            </div>
+        </nav>
+    </div>
+</header>
+<main class="inner-wrapper">
+    <article>
+        <section>
+            <div class="title_container">
+                <div class="title_name">Чтобы продолжить действия на данном сайте вам необходимо авторизоваться</div>
+                <div class="title_border"></div>
+            </div>
+            <div class="authInfo"></div>
+            <div>
+                <form id="firstForm">
+                    <fieldset>
+                        <div class="auth_flex">
+                            <label for="login">Login</label>
+                            <input type="text" class="dataInp" id="login" name="login">
+                            <label for="passwd">Password</label>
+                            <input type="password" class="dataInp" id="passwd" name="password">
+                        </div>
+                        <div class="flex_button">
+                            <input type="submit" value="Login" class="butt res_butt">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="logInfo">
+                <a href="register.html" style="margin-bottom: 3px">
+                    <span>Register</span>
+                </a>
+                <a href="resetPass.html" style="margin-top: 3px">
+                    <span>Reset password</span>
+                </a>
+            </div>
+            <div class="flex_button">
+                <a href="guest.html">
+                    <button id="guestButt" class="butt" style="font-size: 0.9em">Продолжить без авторизации</button>
+                </a>
+            </div>
+        </section>
+    </article>
+    <!--  aside будет виден только по высоте article  -->
+    <aside>
+
+    </aside>
+</main>
+<footer class="inner-wrapper">
+    <nav>
+        <span id="message">Выполнил студент группы АВТ-143 Кувандыков Р.Н.</span>
+    </nav>
+</footer>
+</body>
+<script>
+    $("#firstForm").on("submit", function () {
+        event.preventDefault();
+        $.ajax({
+            url: 'assets/scripts/php/login.php',
+            method: 'post',
+            dataType: 'html',
+            data: $(this).serialize(),
+            success: function (data) {
+                if (data === "Successful login") {
+                    window.location.href = "user.html";
+                } else {
+                    var content = document.getElementsByClassName("authInfo")[0];
+                    if (content.innerHTML === "") {
+                        $(".authInfo").append("Неверный логин или пароль")
+                    } else {
+                        console.log(data);
+                    }
+                }
+            },
+            error: function (jqXHR, exception) {
+                if (jqXHR.status === 0) {
+                    alert('Not connect. Verify Network.');
+                } else if (jqXHR.status == 404) {
+                    alert('Requested page not found (404).');
+                } else if (jqXHR.status == 500) {
+                    alert('Internal Server Error (500).');
+                } else if (exception === 'parsererror') {
+                    alert('Requested JSON parse failed.');
+                } else if (exception === 'timeout') {
+                    alert('Time out error.');
+                } else if (exception === 'abort') {
+                    alert('Ajax request aborted.');
+                } else {
+                    alert('Uncaught Error. ' + jqXHR.responseText);
+                }
+            }
+        });
+    });
+</script>
+</html>

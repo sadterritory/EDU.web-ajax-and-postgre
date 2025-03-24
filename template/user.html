@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous">
+    </script>
+    <script src="assets/scripts/js/script.js"></script>
+
+    <title>Lab 3</title>
+</head>
+<style>
+    .inner-wrapper {
+        max-width: 1380px;
+    }
+</style>
+<body>
+<header class="inner-wrapper">
+    <div class="inner-wrapper">
+        <nav>
+            <div class="flex_container">
+                <img src="assets/images/nstu.png" width="90" height="90" alt="nstu" class="nstuImg">
+                <h1 class="labHeader">Лабораторная работа №4</h1>
+            </div>
+        </nav>
+    </div>
+</header>
+<main class="inner-wrapper abs">
+    <article>
+        <section>
+            <div class="title_container">
+                <div class="title_name">Это страница авторизованных пользователей (AJAX)</div>
+                <div class="title_border"></div>
+            </div>
+            <div class="selectorForm">
+                <form action="">
+                    <fieldset>
+                        <div class="flexSections">
+                            <div>
+                                <label for="firstSelector"></label>
+                                <select name="pets" id="firstSelector">
+                                    <option id="removingAfter" value="">--Please choose an option--</option>
+                                    <option value="ex1">ex1</option>
+                                    <option value="ex2">ex2</option>
+                                    <option value="ex3">ex3</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="secondSelector"></label>
+                                <select id="secondSelector"></select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="someText">
+                <h2>AJAX</h2>
+                <p>
+                    AJAX – это технология взаимодействия с сервером, не предполагающая перезагрузку страницы. Из-за
+                    того, что полностью обновлять страницу каждый раз не нужно, скорость и удобство работы с сайтом
+                    существенно повышается.
+                </p>
+                <h2>История технологии</h2>
+                <p>Термин AJAX впервые использовал Джесси Джеймс Гарретт (Jesse James Garrett), это было 18.02.2005, в
+                    статье «AJAX: новый подход к web-приложениям». Автор был одним из основателей и по совместительству
+                    главой компании Adaptive Path. В статье Гарретт рассказал про принцип разработки web-приложений,
+                    который на тот момент применяли в Gmail и Google Maps. На тот момент это было фундаментальным
+                    прорывом. Тогда Джесси обратил внимание на новый тренд и рассказал, что такое AJAX. Все это вывело
+                    разработку web-приложений на качественно новый уровень. Сейчас можно наблюдать результаты «фонового»
+                    обмена данными сервера и браузера.</p>
+                <p>Механизм работы страницы легко дает понять, что это AJAX-сайт. Ранее пользователю для подтверждения
+                    действий нужно было кликать по кнопкам и переходить по ссылкам. Сейчас же страницы сами реагируют на
+                    внесение данных нужным образом. В итоге время, затраченное на работу с сайтом, сильно сокращается.
+                    Пользователь общается с быстрым web-приложением. Для корректной работы достаточно иметь подключение
+                    к Сети и браузер, поддерживающий JavaScript.</p>
+                <h2>Как работает AJAX</h2>
+                <div class="flexImg">
+                    <img src="assets/images/img.png" alt="ajax tech">
+                </div>
+            </div>
+            <div class="exit_button">
+                <a href="auth.html">
+                    <button class="butt" id="exitButt">
+                        Exit
+                    </button>
+                </a>
+            </div>
+        </section>
+    </article>
+    <!--  aside будет виден только по высоте article  -->
+    <aside>
+
+    </aside>
+</main>
+<footer class="inner-wrapper">
+    <nav>
+        <span id="message">Выполнил студент группы АВТ-143 Кувандыков Р.Н.</span>
+    </nav>
+</footer>
+</body>
+<script>
+
+</script>
+</html>
